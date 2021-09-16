@@ -1,62 +1,69 @@
-// Your code goes in this file.
 
-// alert the name of the game  
-alert("This is a guess the number game")
-//ask for user name
-let username = prompt('Whats your name?')
+  // tell function to start
+  guessnumber()
+  function guessnumber() {
 
-// generate a random number
-let ranNum = Math.floor(Math.random() * 20) + 1;
+    // Your code goes in this file.
 
-// tells you the random number (remove later)
-alert(ranNum)
+    // alert the name of the game  
+    alert("This is a guess the number game")
+    //ask for user name
+    let username = prompt('Whats your name?')
 
-// ask the user to guess a number
-alert("I'm thinking of a number between 1- 20 ")
+    // generate a random number
+    let ranNum = Math.floor(Math.random() * 20) + 1;
 
-// validate and make sure uername is name and number is a number
-let guess = 0
-// also add a varibale for their max tries
-let maxTries = 3
+    // tells you the random number (remove later)
+    alert(ranNum)
 
+    // ask the user to guess a number
+    alert("I'm thinking of a number between 1- 20 ")
 
-while (guess != maxTries) {
-  // add one to the thier the guesses so that the loop stops at 3
-  guess += 1
-  //ask for user input
-  let userNumber = prompt('guess a number')
-  //convert user input to a number
-  userNumber = Number(userNumber)
+    // validate and make sure uername is name and number is a number
+    let guess = 0
+    // also add a varibale for their max tries
+    let maxTries = 3
 
 
-  if ((userNumber >= 1) && (userNumber <= 20)) {
-    // check the user  answer 
-    if (userNumber == ranNum) {
-      guess= maxTries
-      alert('that is correct')
-
-      // ask if you should put another if else statemnet in here to alert "do you wnat to play another round of the game "
-    } else {
-      alert('that is incorrect')
-    }
-  } else {
-    alert('error:inavild')
+    //end function
   }
 
-}
 
-// do ypu ask then say do loop again
+  //start function
+  playgame()
+  function playgame() {
 
-let userinput = prompt( 'do you want to play again?')
-
-if (userinput == 'yes') {
-  
-}
-
-
-
-// ask after
-
+    // the game plays 
+    while (guess != maxTries) {
+      // add one to the thier the guesses so that the loop stops at 3
+      guess += 1
+      //ask for user input
+      let userNumber = prompt('guess a number')
+      //convert user input to a number
+      userNumber = Number(userNumber)
 
 
- // work on the three guesses, have two functions 
+      if (userNumber >= 1 && userNumber <= 20) {
+        // check the user  answer 
+        if (userNumber == ranNum) {
+          guess = maxTries
+          alert('that is correct')
+
+          // ask if you should put another if else statemnet in here to alert "do you wnat to play another round of the game "
+        } else {
+          alert('that is incorrect')
+        }
+        //validation
+      } else {
+        alert('error:inavild')
+      }
+      //end loop 
+    }
+    // ask the user if they wanna play again
+    userInput = prompt('?')
+    let userInput = ''
+    while (userInput == 'yes') {
+      playgame()
+    }
+    // end function 
+  }
