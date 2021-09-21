@@ -28,11 +28,11 @@ function play() {
 
 // generates random number and plays game
 function playgame() {
-  // generate a random number
+  // generates a random number
   let ranNum = Math.floor(Math.random() * maxNum) + minNum;
 
   // alerts the min and max 
-  alert("I'm thinking of a number between " +  minNum + ' and ' + maxNum)
+  alert("I'm thinking of a number between " + minNum + ' and ' + maxNum)
 
   //define the variable
   let guess = 0
@@ -42,14 +42,14 @@ function playgame() {
   while (guess != maxTries) {
     // add one to the their the guesses so that the loop stops at 3
     guess += 1
-    //ask user for guess input
+    //ask user for their guess 
     let userNumber = prompt('guess a number')
     //convert user input to a number
     userNumber = Number(userNumber)
 
     //checks the answer 
     if (userNumber >= minNum && userNumber <= maxNum) {
-     
+
       if (userNumber == ranNum) {
         guess = maxTries
         alert('that is correct')
@@ -57,7 +57,7 @@ function playgame() {
       } else {
         alert('that is incorrect')
       }
-      
+
     } else {
       alert('error:inavild')
     }
